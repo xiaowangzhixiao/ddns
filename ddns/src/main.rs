@@ -23,7 +23,7 @@ fn main() {
     }
     let path = &args[1];
     let port = &args[2];
-    let addr = "127.0.0.1:".to_owned() + &port;
+    let addr = "0.0.0.0:".to_owned() + &port;
     let system = System::new("ddns");
     let state = State::init(path.to_owned() + "/ddns.bin");
 
