@@ -8,5 +8,6 @@ RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /usr/local/cargo/bin/ddns /usr/local/bin/ddns
 RUN mkdir -p /data
 VOLUME [ "/data" ]
+EXPOSE 8080
 ENTRYPOINT ["ddns"]
 CMD ["/data", "8080"]
