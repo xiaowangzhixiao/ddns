@@ -9,4 +9,4 @@ COPY --from=builder /usr/local/cargo/bin/ddns /usr/local/bin/ddns
 RUN mkdir -p /data
 VOLUME [ "/data" ]
 ENTRYPOINT ["ddns"]
-CMD ["/data"]
+CMD ["/data", "8080"]
