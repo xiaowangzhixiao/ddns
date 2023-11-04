@@ -1,3 +1,5 @@
 /target
 /Cargo.lock
 *.bin
+ddns_client/key
+ddns_client/data
