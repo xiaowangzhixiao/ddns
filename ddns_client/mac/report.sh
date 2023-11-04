@@ -29,11 +29,11 @@ openssl rsautl -encrypt -in $file -inkey ../key/PKCS8_publicKey.pem -pubin -out 
 base64 -i $rsafile -o $base64_rsafile
 # 上报ipv6
 rsa_ipv6=`cat $base64_rsafile | head -1`
-name="MacBookAir"
+name="$1"
 result=`curl --header "Content-Type: application/json" --request POST  --data '{"name": "'"$name"'", "ipv6": "'"$rsa_ipv6"'"}' "ddns.manxiaozhi.com/ipv6"`
 
 echo "完成上报 $result $rsa_ipv6"
 
-remote_ipv6=`curl ddns.manxiaozhi.com/ipv6?name=$name`
+remote_ipv6=`curl $2/ipv6?name=$name`
 
 echo "读取 $remote_ipv6"

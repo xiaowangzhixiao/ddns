@@ -1,6 +1,6 @@
 # 读取
 name=$1
-remote_ipv6=`curl ddns.manxiaozhi.com/ipv6?name=$name`
+remote_ipv6=`curl $2/ipv6?name=$name`
 echo "读取 $remote_ipv6"
 # 解密
 rsafile="get_rsa_ipv6"
